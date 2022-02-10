@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  /**
+   * Функция производит математические операции между двумя числами
+   * @param {number} arg1 - первый аргумент
+   * @param {number} arg2 - второй аргумент
+   * @param {string} operation - математическая операция
+   * @return {number} - результат операции
+   */
+  function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+      case "+": 
+        return sum(arg1, arg2);
+        break;
+      case "-": 
+        return dif(arg1, arg2);
+        break;
+      case "*": 
+        return multi(arg1, arg2);
+        break;
+      case "/": 
+        return div(arg1, arg2);
+        break;
+      default:
+        return NaN;
+    }
+  }
+
+  console.log(mathOperation(86, 12, "/"));
+  console.log(mathOperation(86, 12, "ы+"));
+
+/**
+ * Функция складывает два числа
+ * @param {number} a - первое число
+ * @param {number} b - второе число
+ * @return {number}  сумма чисел
+ */
+  function sum(a, b) {
+  return a + b;
+}
+
+
+/**
+ * Функция вычитает меньшее число из большего
+ * @param {number} a - первое число
+ * @param {number} b - второе число
+ * @return {number} разность чисел
+ */
+function dif(a, b) {
+  if (a > b) {
+    return a - b;
+  }
+  return b - a;
+}
+
+/**
+ * Функция перемножает два числа
+ * @param {number} a - первый множитель
+ * @param {number} b - второй множитель
+ * @return {number} произведение чисел
+ */
+function multi(a, b) {
+  return a * b;
+}
+
+/**
+ * Функция делит первое число на второе
+ * @param {number} a - делимое число
+ * @param {number} b - делитель
+ * @return {number} частное
+ */
+function div(a, b) {
+  return a / b;
+}
+</script>
+</body>
+</html>
